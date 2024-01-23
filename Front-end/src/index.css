@@ -1,0 +1,1225 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap');
+/* Fonts */
+
+/* Partie commune à toutes les pages */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+/* Header */
+
+.Website--header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.Website--header--logo{
+    margin-left: 4.8%;
+    padding: 64px 0;
+    width: 3.33%;
+}
+
+.Website--header--bar{
+    height: 1px;
+    width: 32.8%;
+    margin-left: 11.59%;
+    background-color: #FFF;
+    opacity: 0.25;
+    position: absolute;
+    z-index: 5;
+}
+
+.Website--header--menu{
+    backdrop-filter: blur(100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 35.2%;
+    width: 57.6%;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.Website--header--menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    padding: 40px 0;
+}
+
+.Website--header--menu ul a{
+    color: #FFF;
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    display: block;
+    white-space: nowrap;
+}
+
+.Website--header--menu ul a span{
+    font-weight: 700;
+    margin-right: 12px;
+}
+
+.Website--header--menu li{
+    margin: 0 2.9%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.Website--header--li--current::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #FFF;
+    margin-top: 8px;
+    position: absolute;
+    bottom: -39px;
+}
+
+.Website--header--menu li:not(.Website--header--li--current):hover::after{
+    content: '';
+    display: block;
+    width: 93px;
+    height: 3px;
+    background-color: #FFF;
+    margin-top: 8px;
+    position: absolute;
+    bottom: -39px;
+    opacity: 0.5;
+}
+
+.Website--header--language{
+    margin: 0 2%;
+}
+
+/*Responsive*/
+
+/* Tablet */
+
+@media screen and (max-width: 940px){
+    .Website--header--logo{
+        width: 6.2%;
+        padding: 24px 0;
+    }
+
+    .Website--header--bar{
+        display: none;
+    }
+
+    .Website--header--menu{
+        margin-left: 41.2%;
+        width: 58.5%;
+        backdrop-filter: none;
+    }
+
+    .Website--header--menu ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .Website--header--menu ul a{
+        opacity: 1;
+        font-size: 1.4rem;
+        font-weight: 400;
+        font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    .Website--header--menu ul a span{
+        display: none;
+    }
+
+    .Website--header--menu li{
+        margin: 0;
+    }
+}
+
+/* Tablet */
+
+/* Mobile */
+@media screen and (max-width: 670px){
+    .Website--header--menu{
+        display: none;
+    }
+
+    .Website--header--menu--active{
+        display: block;
+        position: absolute;
+        backdrop-filter: blur(20px);
+        position: absolute;
+        width: 67.7%;
+        margin: 0;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        height: 100vh;
+    }
+
+    .Website--header--menu--active ul{
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        padding-top: 120px;
+    }
+
+    .Website--header--menu--active ul li{
+        padding: 16px;
+    }
+
+
+
+    .Website--header--menu--hamburger{
+        width: 24px;
+        height: 21px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        right: 6.4%;
+        z-index: 3;
+    }
+
+    .Website--header--menu--hamburger--line{
+        width: 100%;
+        height: 3px;
+        background-color: #D0D6F9;
+    }
+
+    .Website--header--menu li{
+        display: block;
+        margin-left: 10%;
+    }
+
+    .Website--header--menu ul a span{
+        display: inline;
+        margin-right: 0;
+    }
+
+    .Website--header--menu ul a{
+        font-size: 1.6rem;
+    }
+
+    .Website--header--li--current::after{
+        width: 4px;
+        height: 80%;
+        top: -3px;
+        right: 0;
+    }
+
+    .Website--header--language{
+        margin-left: 14%;
+        margin-top: 20px;
+    }
+
+}
+/* Mobile */
+
+/*Responsive*/
+
+
+
+/* Header */
+
+
+/* Partie commune à toutes les pages */
+
+/* Accueil */
+
+
+/*Background*/
+.Home--html{
+    height: 100%;
+    width: 100%;
+}
+
+.Home--body{
+    background-image: url(../img/Home_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* Background */
+
+/* Titre */
+
+.Home--title{
+    color: #D0D6F9;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    display: inline;
+}
+
+.Home--title strong{
+    font-family: 'Bellefair', serif;
+    font-size: 15rem;
+    color: #FFF;
+    font-weight: 400;
+    display: block;
+    margin: 32px 0;
+}
+
+.Home--undertitle{
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.8rem;
+    color: #D0D6F9;
+    font-weight: 400;
+}
+
+.Home--title--container{
+    margin-left: 11.4%;
+    width: min-content;
+    text-align: justify;
+    position: absolute;
+    bottom: 18.1%;
+}
+
+/* Titre */
+
+/* Bouton principal */
+.Home--main_button--link{
+    text-decoration: none;
+    color: #0B0D17;
+    background-color: #FFF;
+    display: block;
+    font-size: 3.2rem;
+    font-family: 'Bellefair', serif;
+    font-weight: 400;
+    width: 29.4rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 29.4rem;
+    position: absolute;
+    bottom: 14.5%;
+    right: 11.4%;
+}
+
+.Home--main_button--link:hover::after{
+    background-color: #FFF;
+    display: block;
+    position: absolute;
+    content: '';
+    width: 45rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    opacity: 0.1;
+    bottom: -25%;
+    right: -25%;
+}
+
+/* Responsive */
+
+/* Desktop */
+
+@media screen and (max-width: 1250px){
+    .Home--title{
+        font-size: 2.4rem;
+    }
+
+    .Home--title strong{
+        font-size: 12rem;
+    }
+
+    .Home--undertitle{
+        font-size: 1.6rem;
+    }
+
+    .Home--main_button--link{
+        font-size: 2.8rem;
+        width: 25.6rem;
+        line-height: 25.6rem;
+    }
+
+    .Home--main_button--link:hover::after{
+        width: 40rem;
+        bottom: -27.5%;
+        right: -27.5%;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .Home--title{
+        font-size: 2rem;
+    }
+
+    .Home--title strong{
+        font-size: 10rem;
+    }
+
+    .Home--undertitle{
+        font-size: 1.2rem;
+    }
+
+    .Home--main_button--link{
+        font-size: 2.4rem;
+        width: 20rem;
+        line-height: 20rem;
+    }
+
+    .Home--main_button--link:hover::after{
+        width: 30rem;
+        bottom: -25%;
+        right: -25%;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .Home--title{
+        font-size: 1.8rem;
+    }
+
+    .Home--title strong{
+        font-size: 8rem;
+    }
+
+    .Home--undertitle{
+        font-size: 1rem;
+    }
+
+    .Home--main_button--link{
+        font-size: 2rem;
+        width: 16rem;
+        line-height: 16rem;
+    }
+
+    .Home--main_button--link:hover::after{
+        width: 25rem;
+        bottom: -27.5%;
+        right: -27.5%;
+    }
+}
+
+/* Desktop */
+
+/* Version tablet */
+@media screen and (max-width: 768px){
+    .Home--body{
+        background-image: url(../img/Home_background_tablet.png);
+    
+    }
+
+    .Home--title--container{
+        text-align: center;
+        width: 58.5%;
+        top: 202px;
+        left: 20.75%;
+        margin: 0;
+    }
+
+    .Home--main_button--link{
+        width: 24.2rem;
+        font-size: 3.2rem;
+        line-height: 24.2rem;
+        bottom: 90px;
+        left: calc(50% - 12.1rem);
+    }
+
+    .Home--main_button--link:hover::after{
+        display: none;
+    }
+
+    .Home--undertitle{
+        font-size: 1.6rem;
+        text-align: justify-center;
+    }
+
+
+}
+
+@media screen and (max-width: 600px){
+    .Home--title{
+        font-size: 1.4rem;
+    }
+
+    .Home--title strong{
+        font-size: 6rem;
+    }
+
+    .Home--undertitle{
+        font-size: 1rem;
+    }
+}
+
+/* Si l'utilisateur à un petit écran en long, comme un mobile en mode horizontalle, on essaye d'adapter pour que ça passe */
+@media screen and (max-width: 768px) and (max-height: 850px) and (min-width: 450px){
+    .Home--main_button--link{
+        width: 15rem;
+        font-size: 1.6rem;
+        line-height: 15rem;
+        bottom: 30px;
+        left: calc(50% - 7.5rem);
+    }
+
+    .Home--title strong{
+        margin: 10px 0;
+    }
+
+    /* .Home--title{
+        font-size: 1.8rem;
+    }
+
+    .Home--title strong{
+        font-size: 8rem;
+    } */
+
+    .Home--undertitle{
+        font-size: 1rem;
+    }
+    
+}
+/* Si l'utilisateur à un petit écran en long, comme un mobile en mode horizontalle, on essaye d'adapter pour que ça passe */
+
+/* Si l'utilisateur à un petit écran en long, mais moins haut que le code juste au dessus, on affiche certains éléments comme en desktop */
+@media screen and (max-width: 768px) and (max-height: 590px) and (min-width: 450px){
+    .Home--main_button--link{
+        left: 70%;
+        top: 202px;
+    }
+
+    .Home--title--container{
+        left: 5%;
+    }
+
+    .Home--title strong{
+        font-size: 5rem;
+    }
+}
+/* Si l'utilisateur à un petit écran en long, mais moins haut que le code juste au dessus, on affiche certains éléments comme en desktop */
+
+
+/* Version tablet */
+
+/* Mobile */
+@media screen and (max-width: 450px){
+    .Home--title--container{
+        top: 112px;
+    }
+
+    .Home--main_button--link{
+        width: 15rem;
+        font-size: 2rem;
+        line-height: 15rem;
+        bottom: 48px;
+        left: calc(50% - 7.5rem);
+    }
+}
+/* Mobile */
+
+/* Responsive */
+
+/* Accueil */
+
+/* Destination */
+.Destination--body{
+    background-color: #0B0D17;
+}
+
+.Destination--title{
+    color: #FFF;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 2.8rem;
+    margin-left: 11.4%;
+}
+
+.Destination--title span{
+    font-weight: 800;
+    opacity: 0.3;
+    margin-right: 2%;
+    letter-spacing: 0.472rem;
+}
+
+.Destination--img{
+    width: 30.9%;
+    margin-top: 97px;
+    margin-left: 15.3%;
+}
+
+.Destination--text{
+    width: 30.8%;
+    position: absolute;
+    right: 10.3%;
+    top: 343px;
+}
+
+.Destination--nav__link{
+    color: #D0D6F9;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-decoration: none;
+    position: relative;
+}
+
+.Destination--nav{
+    width: 63.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Destination--nav__link__current{
+    color: #FFF;
+}
+
+.Destination--nav__link__current::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #FFF;
+    position: absolute;
+    bottom: -15px;
+}
+
+.Destination--nav__link:not(.Destination--nav__link__current):hover::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #FFF;
+    position: absolute;
+    bottom: -15px;
+    opacity: 0.5;
+}
+
+.Destination--text__title{
+    color: #FFF;
+    font-family: 'bellfair', serif;
+    font-size: 10rem;
+    font-weight: 400;
+    margin-top: 52px;
+}
+
+.Destination--text__p{
+    color: #D0D6F9;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-top: 20px;
+    height: 128px;
+}
+
+.Destination--text--bar{
+    width: 100%;
+    height: 1px;
+    background-color: #383B4B;
+    margin-top: 25px;
+}
+
+.Destination--text--infos{
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+}
+
+.Destination--text--infos--container{
+    width: 15.3rem;
+}
+
+.Destination--text--infos--title{
+    color: #D0D6F9;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.4rem;
+}
+
+.Destination--text--infos--p{
+    color: #FFF;
+    font-family: 'Bellfair', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+}
+
+.Destination--text--time{
+    margin-left: 5.2%;
+}
+
+/* Responsive */
+
+/* Desktop */
+
+@media screen and (max-width: 1150px){
+    .Destination--text__p{
+        font-size: 1.4rem;
+    }
+}
+
+/* Desktop */
+
+/* Tablet */
+@media screen and (max-width: 768px){
+    .Destination--img{
+        width: 39%;
+        margin-left: 30.5%;
+        margin-top: 60px;
+    }
+
+    .Destination--text{
+        width: 74.6%;
+        right: 12.7%;
+        top: 573px;
+        text-align: center;
+    }
+
+    .Destination--title{
+        margin-left: 5%;
+        margin-top: 40px;
+    }
+
+    .Destination--nav{
+        width: 49.3%;
+        margin-left: 25.35%;
+
+    }
+
+    .Destination--nav__link:hover::after{
+        display: none!important;
+    }
+
+    .Destination--text__title{
+        font-size: 8rem;
+        margin-top: 47px;
+    }
+
+    .Destination--text__p{
+        margin-top: 10px;
+        height: 110px;
+        font-size: 1.6rem;
+    }
+
+    .Destination--text--bar{
+        margin-top: 0;
+    }
+
+    .Destination--text--infos{
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+
+    .Destination--text--distance__p, .Destination--text--time__p{
+        margin-top: 16px;
+    }
+}
+/* Tablet */
+
+/* Mobile */
+
+@media screen and (max-width: 450px) {
+    .Destination--title{
+        font-size: 1.6rem;
+        margin-top: 0;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .Destination--img{
+        width: 45.3%;
+        margin-left: 27.35%;
+        margin-top: 36px;
+    }
+
+    .Destination--text{
+        top: 335px;
+        width: 87.2%;
+        left: 6.4%;
+    }
+
+    .Destination--nav{
+        width: 72.4%;
+        margin-left: 13.8%;
+    }
+
+    .Destination--nav__link{
+        font-size: 1.4rem;
+    }
+
+    .Destination--text__title{
+        font-size: 5.6rem;
+        margin-top: 26px;
+    }
+
+    .Destination--text__p{
+        font-size: 1.5rem;
+        margin-top: 0px;
+    }
+
+    .Destination--text--bar{
+        margin-top: 32px;
+    }
+
+    .Destination--text--infos{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Destination--text--infos--container{
+        margin-left: 0;
+
+    }
+
+    .Destination--text--time{
+        margin-top: 32px;
+    }
+
+}
+
+/* Mobile */
+
+/* Responsive */
+
+/* Destination */
+
+/* Equipage */
+
+.Crew--body{
+    background-image: url(../img/Crew_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #0B0D17;
+}
+
+.Crew--image{
+    width: 45.1%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.Crew--image img{
+    width: 71.1%;
+}
+
+.Crew--image__mobile{
+    display: none;
+}
+
+.Crew--bar__mobile{
+    display: none;
+}
+
+.Crew--text--nav__mobile{
+    display: none;
+}
+
+.Crew--text{
+    width: 33.8%;
+    margin-left: 11.5%;
+    margin-top: 10.6%;
+}
+
+.Crew--text--role{
+    color: #FFF;
+    opacity: 0.5;
+    font-family: "Bellfair", serif;
+    font-size: 3.2rem;
+}
+
+.Crew--text--name{
+    color: #FFF;
+    font-family: "Bellfair", serif;
+    font-size: 5rem;
+    margin-top: 30px;
+}
+
+.Crew--text--description{
+    color: #D0D6F9;
+    font-family: "Barlow", sans-serif;
+    font-size: 1.8rem;
+    margin-top: 4rem;
+}
+
+.Crew--text--nav{
+    margin-top: 15.2rem;
+}
+
+.Crew--text--nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-between;
+    width: 27.1%;
+}
+
+.Crew--text--nav--link{
+    display: block;
+    background-color: #FFF;
+    opacity: 0.18;
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.Crew--text--nav--link:not(.Crew--text--nav--link--current):hover{
+    opacity: 0.5;
+}
+
+.Crew--text--nav--link--current{
+    opacity: 1;
+}
+
+/* Responsive */
+
+/* Desktop */
+
+@media screen and (max-height: 800px) and (min-width: 769px){
+    .Crew--container{
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 1100px){
+    .Crew--image img{
+        width: 90%;
+    }
+}
+
+/* Desktop */
+
+/* Tablet */
+
+@media screen and (max-width: 768px) {
+    .Crew--body{
+        background-image: url(../img/Crew_background_mobile.png);
+    }
+
+    .Crew--text{
+        width: 72.6%;
+        text-align: center;
+    }
+
+    .Crew--text--nav ul{
+        width: 15.7%;
+        margin-left: 42.15%;
+    }
+
+    .Crew--text--role{
+        font-size: 2.4rem;
+    }
+
+    .Crew--text--name{
+        margin-top: 20px;
+        font-size: 4rem;
+    }
+
+    .Crew--text--description{
+        font-size: 1.6rem;
+        margin-top: 32px;
+    }
+
+    .Crew--text--nav{
+        margin-top: 48px;
+    }
+
+    .Crew--text--nav--link{
+        width: 1rem;
+    }
+
+    .Crew--image{
+        width: 100%;
+        position: relative;
+        margin-top: 40px;
+    }
+
+    .Crew--image img{
+        width: 53.5%;
+        margin-left: 23.25%;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .Crew--text--nav ul{
+        width: 20.7%;
+        margin-left: 39.65%;
+    }
+}
+
+/* tablet */
+
+/* Mobile */
+
+@media screen and (max-width: 375px){
+    .Crew--image:not(.Crew--image__mobile){
+        display: none;
+    }
+
+    .Crew--text--nav:not(.Crew--text--nav__mobile){
+        display: none;
+    }
+
+    .Crew--image{
+        display: block;
+    }
+
+    .Crew--text--nav__mobile{
+        display: block;
+        margin-top: 32px;
+    }
+
+    .Crew--bar__mobile{
+        display: block;
+        margin-left: 6.4%;
+        margin-top: -2px;
+        width: 87.2%;
+        height: 1px;
+        background-color: #383B4B;
+    }
+
+    .Crew--text{
+        margin-top: 46px;
+    }
+
+    .Crew--text--role{
+        font-size: 1.6rem;
+    }
+
+    .Crew--text--name{
+        margin-top: 0;
+        font-size: 2.4rem;
+    }
+
+    .Crew--text--description{
+        font-size: 1.5rem;
+        margin-top: 32px;
+    }
+}
+
+/* Mobile */
+
+/* Responsive */
+
+
+/* Equipage */
+
+/* Technologie */
+
+.Tech--body{
+    background-image: url(../img/Tech_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #0B0D17;
+}
+
+.Tech--text{
+    display: flex;
+    flex-direction: row;
+    width: 55%;
+    margin-left: 8%;
+    height: 30.4rem;
+    margin-top: 137px;
+}
+
+.Tech--text--nav{
+    height: 100%;
+}
+
+.Tech--text--nav ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style-type: none;
+    height: 100%;
+}
+
+.Tech--text--nav--link{
+    background-color: transparent;
+    display: block;
+    width: 8rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.2rem;
+    text-decoration: none;
+    color: #FFF;
+    font-family: "Bellfair", serif;
+    font-weight: 400;
+}
+
+.Tech--text--nav--link--current{
+    background-color: #FFF;
+    color: #0B0D17;
+}
+
+.Tech--text--nav--link:not(.Tech--text--nav--link--current):hover{
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.Tech--text--infos{
+    margin-left: 13.2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Tech--text--title{
+    color: #D0D6F9;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.Tech--text--subtitle{
+    color: #FFF;
+    font-family: "Bellfair", serif;
+    font-size: 5.6rem;
+    font-weight: 400;
+    margin-top: 25px;
+}
+
+.Tech--text--description{
+    color: #D0D6F9;
+    font-family: "Barlow", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-top: 25px;
+    width: 73.5%;
+}
+
+.Tech--img{
+    position: absolute;
+    right: 0;
+    top: 272px;
+    width: 35.7%;
+}
+
+/* Responsive */
+
+/* Tablet */
+
+@media screen and (max-width: 768px){
+    .Tech--img{
+        width: 100%;
+        height: 310px;
+        top: 220px;
+        overflow: hidden;
+    }
+
+    .Tech--img--image{
+        width: 100%;
+        position: absolute;
+        bottom: -100px;
+    }
+
+    .Tech--text{
+        position: absolute;
+        top: 586px;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .Tech--text--nav{
+        width: 27.6%;
+    }
+
+    .Tech--text--nav ul{
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .Tech--text--nav--link{
+        width: 6rem!important;
+        font-size: 2.4rem!important;
+    }
+
+    .Tech--text--infos{
+        margin: 0;
+        margin-top: 34px;
+    }
+
+    .Tech--text--title{
+        text-align: center;
+        font-size: 1.6rem;
+    }
+
+    .Tech--text--subtitle{
+        font-size: 4rem;
+        text-align: center;
+    }
+
+    .Tech--text--description{
+        font-size: 1.6rem;
+        width: 60%;
+        text-align: center;
+        margin-left: 20%;
+    }
+
+}
+
+/* Tablet */
+
+/* Mobile */
+
+@media screen and (max-width: 690px){
+    .Tech--img{
+        height: 170px;
+        top: 200px;
+    }
+
+    .Tech--text{
+        top: 400px;
+    }
+
+    .Tech--text--nav{
+        width: 51.2%;
+        height: 66px;
+    }
+
+    .Tech--text--nav--link{
+        width: 4rem!important;
+        font-size: 1.6rem!important;
+    }
+
+    .Tech--text--infos{
+        margin-top: 0px;
+    }
+
+    .Tech--text--title{
+        font-size: 1.4rem;
+    }
+
+    .Tech--text--subtitle{
+        font-size: 2.4rem;
+    }
+
+    .Tech--text--description{
+        font-size: 1.4rem;
+        width: 87.2%;
+        margin-left: 6.4%;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .Tech--img{
+        top: 139px;
+    }
+
+    .Tech--text{
+        top: 343px;
+    }
+}
+
+/* Mobile */
+
+/* Responsive */
+
+/* Technologie */

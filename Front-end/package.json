@@ -1,0 +1,19 @@
+{
+  "name": "space-api-front_end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "postcss ./src/index.css -o ./css/style.css",
+    "watch:css": "postcss ./src/index.css -o ./css/style.css --watch"
+  },
+  "author": "Jérémie Crinon",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "cssnano": "^6.0.3",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "postcss-preset-env": "^9.3.0"
+  }
+}

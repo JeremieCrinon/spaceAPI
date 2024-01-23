@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="Home--html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+</head>
+<body class="Tech--body">
+    <header class="Website--header">
+
+        <div class="Website--header--logo">
+            <svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0ZM24 0C24 0 22.9412 10.9412 16.9412 16.9412C10.9412 22.9412 0 24 0 24C0 24 10.9412 25.0588 16.9412 31.0588C22.9412 37.0588 24 48 24 48C24 48 25.0588 37.0588 31.0588 31.0588C37.0588 25.0588 48 24 48 24C48 24 37.0588 22.9412 31.0588 16.9412C25.0588 10.9412 24 0 24 0Z" id="Ellipse-Difference" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+            </svg>
+        </div>
+    
+        <div class="Website--header--bar"></div>
+    
+        <div class="Website--header--menu--hamburger">
+                <div class="Website--header--menu--hamburger--line"></div>
+                <div class="Website--header--menu--hamburger--line"></div>
+                <div class="Website--header--menu--hamburger--line"></div>
+            </div>
+    
+        <div class="Website--header--menu">
+            <ul>
+                <li><a href="#"><span>00</span> HOME</a></li>
+                <li><a href="destination.html"><span>01</span> DESTINATION</a></li>
+                <li><a href="crew.html"><span>02</span> CREW</a></li>
+                <li class="Website--header--li--current"><a href="tech.html"><span>03</span> TECHNOLOGY</a></li>
+                <a class="Website--header--language" href="#">English</a>
+                <a class="Website--header--language" href="../fr/tech.html">Français</a>
+    
+            </ul>
+        </div>    
+    
+        <!-- Script js pour le header -->
+        <script src="../js/header.js"></script>
+    </header>
+
+    <h1 class="Destination--title"><span>03</span>SPACE LAUNCHER 101</h1><!-- Je remets la même class que pour destination, car le titre est le même -->
+    <section class="Tech--text">
+        
+        <nav class="Tech--text--nav">
+            <ul>
+                <li><a class="Tech--text--nav--link Tech--text--nav--link--current" href="{{ url('/tech/launcher') }}">1</a></li>
+                <li><a class="Tech--text--nav--link" href="{{ url('/tech/spaceport') }}">2</a></li>
+                <li><a class="Tech--text--nav--link" href="{{ url('/tech/space_capsule') }}">3</a></li>
+            </ul>
+        </nav>
+        <div class="Tech--text--infos">
+            <h2 class="Tech--text--title">THE TERMINOLOGY...</h2>
+            <h3 class="Tech--text--subtitle">THE LAUNCHER</h3>
+            <p class="Tech--text--description">A launcher or carrying rocket is a vehicle powered by rockets used to carry payload from Earth surface to space, often to an Earth orbite or further. Ours rocket WEB-X is the most powerfull in service. Standit at a whoping 150 meters high, it give an impressive spectacle on the launching site.</p>
+        </div>
+        
+    </section>
+    <section class="Tech--img">
+       
+        <img class="Tech--img--image" src="../img/launcher.png" alt="Launcher">
+
+    </section>
+</body>
+</html>
