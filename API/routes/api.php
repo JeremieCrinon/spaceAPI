@@ -19,4 +19,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Route::post('/planet', [PlanetController::class, 'store']);
+
 Route::post('/planet', [PlanetController::class, 'store']);
+
+Route::get('/planet', function() {
+    return response()->json([
+        'message' => 'I love octopuses!'
+    ], 200);
+});

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('fr_name');
             $table->string('en_name');
-            $table->string('fr_description');
-            $table->string('en_description');
+            $table->text('fr_description');
+            $table->text('en_description');
             $table->string('distance');
             $table->string('time');
             $table->string('image');

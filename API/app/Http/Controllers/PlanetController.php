@@ -50,6 +50,7 @@ class PlanetController extends Controller
         $planet->distance = $request->distance;
         $planet->time = $request->time;
         $planet->image = $request->image->store('img', 'public');
+        // $planet->image = "vvv";
         $planet->save();
         return response()->json(['message' => "La planet a bien été créée !"]);
     }
