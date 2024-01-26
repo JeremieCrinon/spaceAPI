@@ -566,6 +566,7 @@ html{
     font-weight: 400;
     text-decoration: none;
     position: relative;
+    cursor: pointer;
 }
 
 .Destination--nav{
@@ -606,6 +607,7 @@ html{
     font-size: 10rem;
     font-weight: 400;
     margin-top: 52px;
+    text-transform: uppercase;
 }
 
 .Destination--text__p{

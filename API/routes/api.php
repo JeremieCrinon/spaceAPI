@@ -23,8 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/planet', [PlanetController::class, 'store']);
 
-Route::get('/planet', function() {
-    return response()->json([
-        'message' => 'I love octopuses!'
-    ], 200);
-});
+Route::get('/planet/{id}', [PlanetController::class, 'show']);
+Route::get('/planets', [PlanetController::class, 'indexForMenu']);
+
+Route::get('/planetImg/{imgName}', [PlanetController::class, 'getImg']);

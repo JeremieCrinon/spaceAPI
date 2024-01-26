@@ -4,15 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Planet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response; 
 
 class PlanetController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource for the menu.
      */
-    public function index()
+    public function indexForMenu()
     {
-        //
+        $planets = Planet::select('id', 'fr_name', 'en_name')->get();
+        return response()->json($planets);
     }
 
     /**
@@ -58,9 +62,30 @@ class PlanetController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Planet $planet)
+    public function show(Planet $id)
     {
-        //
+        return response()->json($id);
+    }
+
+    /**
+     * Display the image of a planet.
+     */
+    public function getImg($imgName)
+    {
+        $path = storage_path("app/public/img/" . $imgName);
+    
+        if (!File::exists($path)) {
+            abort(404);
+            // return response()->json(['message' => $path], 404);
+        }
+
+        $file = File::get($path);
+        $type = File::mimeType($path);
+
+        $response = Response::make($file, 200);
+        $response->header("Content-Type", $type);
+
+        return $response;
     }
 
     /**
