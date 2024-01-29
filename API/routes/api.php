@@ -15,9 +15,7 @@ use App\Http\Controllers\PlanetController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
 
 // Route::post('/planet', [PlanetController::class, 'store']);
 
