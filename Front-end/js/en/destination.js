@@ -4,6 +4,11 @@ const Destination_text_subtitle = document.getElementById('Destination_text_subt
 const Destination_text_distance = document.getElementById('Destination_text_distance');
 const Destination_text_time = document.getElementById('Destination_text_time');
 const Destination_img = document.getElementById('Destination_img');
+const Destination_content = document.getElementById('Destination_content');
+
+function HandleApiError(){
+    Destination_content.innerHTML = '<h2 class="Destination--error">Error 500 : Internal server error, please try again later!</h2>';
+}
 
 function LoadPlanet(id){
     fetch(`http://localhost:8000/api/planet/${id}`)
@@ -19,7 +24,7 @@ function LoadPlanet(id){
         Destination_img.src = "http://localhost:8000/api/planetImg/" + imagePath;
 
     })
-    .catch(err => console.log(err));
+    .catch(HandleApiError);
 }
 
 window.addEventListener('load', () => {
@@ -43,5 +48,5 @@ window.addEventListener('load', () => {
         const firstLink = document.querySelector('.Destination--nav__link');
         firstLink.classList.add('Destination--nav__link__current');
     })
-    .catch(err => console.log(err));
+    .catch(HandleApiError);
 });

@@ -43,29 +43,33 @@
     
     <h1 class="Destination--title"><span>01</span>CHOOSE YOUR DESTINATION</h1>
 
-    <img class="Destination--img" id="Destination_img">
+    <div id="Destination_content">
+        <img class="Destination--img" id="Destination_img">
 
-    <section class="Destination--text">
-        <nav id="Destination_nav" class="Destination--nav">
-            <!-- <a href="{{ url('/destination/moon') }}" class="Destination--nav__link Destination--nav__link__current">Moon</a>
-            <a href="{{ url('/destination/mars') }}" class="Destination--nav__link">Mars</a>
-            <a href="{{ url('/destination/europe') }}" class="Destination--nav__link">Europe</a>
-            <a href="{{ url('/destination/titan') }}" class="Destination--nav__link">Titan</a> -->
-        </nav>
+        <section class="Destination--text">
+            <nav id="Destination_nav" class="Destination--nav">
+                <!-- <a href="{{ url('/destination/moon') }}" class="Destination--nav__link Destination--nav__link__current">Moon</a>
+                <a href="{{ url('/destination/mars') }}" class="Destination--nav__link">Mars</a>
+                <a href="{{ url('/destination/europe') }}" class="Destination--nav__link">Europe</a>
+                <a href="{{ url('/destination/titan') }}" class="Destination--nav__link">Titan</a> -->
+            </nav>
 
-        <h2 id="Destination_text_title" class="Destination--text__title"></h2>
-        <p id="Destination_text_subtitle" class="Destination--text__p"></p>
-        <div class="Destination--text--bar"></div>
-        <div class="Destination--text--infos">
-            <div class="Destination--text--distance Destination--text--infos--container">
-                <p class="Destination--text--distance__title Destination--text--infos--title">DISTANCE</p>
-                <p id="Destination_text_distance" class="Destination--text--distance__p Destination--text--infos--p"></p>
+            <h2 id="Destination_text_title" class="Destination--text__title"></h2>
+            <p id="Destination_text_subtitle" class="Destination--text__p"></p>
+            <div class="Destination--text--bar"></div>
+            <div class="Destination--text--infos">
+                <div class="Destination--text--distance Destination--text--infos--container">
+                    <p class="Destination--text--distance__title Destination--text--infos--title">DISTANCE</p>
+                    <p id="Destination_text_distance" class="Destination--text--distance__p Destination--text--infos--p"></p>
+                </div>
+                <div class="Destination--text--time Destination--text--infos--container">
+                    <p class="Destination--text--time__title Destination--text--infos--title">DURATION</p>
+                    <p id="Destination_text_time" class="Destination--text--time__p Destination--text--infos--p"></p>
+                </div>
             </div>
-            <div class="Destination--text--time Destination--text--infos--container">
-                <p class="Destination--text--time__title Destination--text--infos--title">DURATION</p>
-                <p id="Destination_text_time" class="Destination--text--time__p Destination--text--infos--p"></p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
+
+    
 </body>
 </html>

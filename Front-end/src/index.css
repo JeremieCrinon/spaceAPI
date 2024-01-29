@@ -653,6 +653,15 @@ html{
     margin-left: 5.2%;
 }
 
+.Destination--error{
+    color: #FFF;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-top: 20px;
+    text-align: center;
+}
+
 /* Responsive */
 
 /* Desktop */
