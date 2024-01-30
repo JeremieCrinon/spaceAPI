@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlanetController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,8 @@ Route::get('/planet/{id}', [PlanetController::class, 'show']);
 Route::get('/planets', [PlanetController::class, 'indexForMenu']);
 
 Route::get('/planetImg/{imgName}', [PlanetController::class, 'getImg']);
+
+
+Route::post('/register', [AuthController::class, 'register']);
+
+Route::post('/login', [AuthController::class, 'login']);
