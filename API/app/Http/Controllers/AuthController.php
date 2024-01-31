@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -13,11 +14,23 @@ class AuthController extends Controller
         if(User::exists()){
             return response()->json(['message' => "Un seul compte ne peut être créé, celui de l'administrateur !"], 400);
         }
-        $data = $request->validate([
+        // $data = $request->validate([
+        //     'name' => 'required|max:20',
+        //     'email' => 'required|email|unique:users|confirmed',
+        //     'password' => 'required|confirmed',
+        // ]);
+
+        $validator = Validator::make($request->all(), [
             'name' => 'required|max:20',
             'email' => 'required|email|unique:users|confirmed',
             'password' => 'required|confirmed',
         ]);
+    
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
+        
+
         $user = new User;
         $user->name = $request->name;
         $user->email = $request->email; 
