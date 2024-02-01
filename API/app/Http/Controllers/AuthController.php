@@ -57,4 +57,12 @@ class AuthController extends Controller
 
         return response()->json(['message' => "Vous êtes connecté.e", 'token' => $token], 200);
     }
+
+    public function checkToken(Request $request){
+        $user = User::where('remember_token', $request->token)->first();
+        if(!$user){
+            return response()->json(['message' => "L'utilisateur n'est pas autorisé"], 401);
+        }
+        return response()->json(['message' => "L'utilisateur est autorisé"], 200);
+    }
 }

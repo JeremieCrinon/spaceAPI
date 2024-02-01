@@ -31,3 +31,5 @@ Route::get('/planetImg/{imgName}', [PlanetController::class, 'getImg']);
 Route::post('/register', [AuthController::class, 'register']);
 
 Route::post('/login', [AuthController::class, 'login']);
+
+Route::post('/token', [AuthController::class, 'checkToken']);
