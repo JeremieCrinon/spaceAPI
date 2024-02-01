@@ -6,9 +6,9 @@
     <title>Space</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/script.js" defer></script>
-    <script src="../js/en/register.js" defer></script>
+    <script src="../js/en/login.js" defer></script>
 </head>
-<body class="Register--body">
+<body class="Login--body">
     <header class="Website--header">
 
         <div class="Website--header--logo">
@@ -42,25 +42,16 @@
     </header>
 
 
-    <h1 class="Register--title">REGISTER</h1>
-    <form method="post" id="register_form" class="Register--form"> <!--Je mets le formulaire en méthode post pour éviter que le mot de passe se retrouve dans le lien-->
-        <h2 id="register_form_message"></h2>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Name">
-
+    <h1 class="Login--title">LOGIN</h1>
+    <form method="post" id="login_form" class="Login--form"> <!--Je mets le formulaire en méthode post pour éviter que le mot de passe se retrouve dans le lien-->
+        <h2 id="login_form_message"></h2>
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Email">
-
-        <label for="confirm_email">Confirm Email</label>
-        <input type="email" id="confirm_email" name="email_confirmation" placeholder="Confirm Email">
 
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="Password">
 
-        <label for="confirm_password">Confirm Password</label>
-        <input type="password" id="confirm_password" name="password_confirmation" placeholder="Confirm Password">
-
-        <input type="submit" value="Register">
+        <input type="submit" value="Login">
     </form>
 </body>
 </html>

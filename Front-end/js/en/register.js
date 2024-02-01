@@ -1,4 +1,5 @@
 const register_form = document.getElementById('register_form');
+const register_form_message = document.getElementById('register_form_message');
 
 register_form.addEventListener('submit', (e) => {
     e.preventDefault(); //Empêche le rechargement de la page
@@ -13,9 +14,11 @@ register_form.addEventListener('submit', (e) => {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data); // Traiter la réponse de l'API
+        sessionStorage.setItem('message', 'Votre compte à bien été créé, veuillez vous connecter.');
+        window.location.href = 'login.html';
     })
     .catch(error => {
         console.error(error); // Gérer les erreurs éventuelles
+        register_form_message.textContent = error;
     });
 });
