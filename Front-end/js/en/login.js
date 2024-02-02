@@ -20,8 +20,10 @@ login_form.addEventListener('submit', (e) => {
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        localStorage.setItem('token', data.token);
-        console.log(localStorage.getItem('token'));
+        // localStorage.setItem('token', data.token);
+        // console.log(localStorage.getItem('token'));
+        document.cookie = `token=${data.token}; path=/`;
+        window.location.href = 'http://localhost/protected/index.html';
     })
     .catch(error => {
         console.error(error); // Gérer les erreurs éventuelles

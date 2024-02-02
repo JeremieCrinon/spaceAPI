@@ -1,28 +1,28 @@
 <?php
 
-$token = $_POST['token'] ?? ''; //Je pense pas que $_POST est une bonne idée, je cherche une autre solution
+$token = $_COOKIE['token']??''; // Récupérez le token de la requête
 
 // Vérifiez le token avec l'API Laravel
 $isTokenValid = callApiToVerifyToken($token);
 
 // echo phpinfo();
 
-// if ($isTokenValid) {
-//     // Obtenez le chemin réel du fichier demandé
-//     $filePath = getFilePathBasedOnRequest();
+if ($isTokenValid) {
+    // Obtenez le chemin réel du fichier demandé
+    $filePath = getFilePathBasedOnRequest();
 
-//     // Vérifiez que le fichier existe et n'est pas un répertoire
-//     if (file_exists($filePath) && !is_dir($filePath)) {
-//         // Servir le fichier
-//         readfile($filePath);
-//     } else {
-//         header("HTTP/1.1 404 Not Found");
-//         exit('File not found');
-//     }
-// } else {
-//     header("HTTP/1.1 401 Unauthorized");
-//     exit('Unauthorized');
-// }
+    // Vérifiez que le fichier existe et n'est pas un répertoire
+    if (file_exists($filePath) && !is_dir($filePath)) {
+        // Servir le fichier
+        readfile($filePath);
+    } else {
+        header("HTTP/1.1 404 Not Found");
+        exit('File not found');
+    }
+} else {
+    header("HTTP/1.1 401 Unauthorized");
+    exit('Unauthorized');
+}
 
 // Fonction pour appeler votre API Laravel et vérifier le token
 function callApiToVerifyToken($token) {
@@ -46,14 +46,25 @@ function callApiToVerifyToken($token) {
     // Fermer la session cURL
     curl_close($ch);
 
-    // Afficher la réponse
-    echo $response;
+    $response = json_decode($response);
+
+    // var_dump($data);
+
+    if($response->message === "L'utilisateur est autorisé") {
+        // echo "true";
+        // echo $response->message;
+        return true;
+    } else {
+        // echo "false";
+        // echo $response->message;
+        return false;
+    }
 
 }
 
 // Fonction pour déterminer le chemin du fichier basé sur la requête
 function getFilePathBasedOnRequest() {
-    // Déterminez et retournez le chemin du fichier
-    // ...
+    $filePath = $_SERVER['DOCUMENT_ROOT'] . $_SERVER['REQUEST_URI'];
+    return $filePath;
 }
 ?>
