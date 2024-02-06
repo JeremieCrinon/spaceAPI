@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap');
 /* Fonts */
 
+/* Class générales */
+.d-none{
+    display: none!important;
+}
+/* Class générales */
+
 /* Partie commune à toutes les pages */
 *{
     margin: 0;

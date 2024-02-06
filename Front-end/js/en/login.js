@@ -22,7 +22,7 @@ login_form.addEventListener('submit', (e) => {
         console.log(data);
         // localStorage.setItem('token', data.token);
         // console.log(localStorage.getItem('token'));
-        document.cookie = `token=${data.token}; path=/`;
+        document.cookie = `token=${data.token}; max-age=7200; path=/`;
         window.location.href = 'http://localhost/protected/index.html';
     })
     .catch(error => {

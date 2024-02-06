@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="Private--html">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Space</title>
+
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body class="Private--body">
+        <header class="Private--header">
+
+            <nav class="Private--header--nav">
+                <ul>
+                    <li><a href="../../en/index.html">PUBLIC PART</a></li>
+                    <li class="Private--header--li--current"><a href="index.html">HOME</a></li>
+                    <li id="Private--header--li--edit"><a href="#">EDIT CONTENT</a></li>
+                    <li class="d-none Private--header--edit--under"><a href="#">EDIT PLANETS</a></li>
+                    <li class="d-none Private--header--edit--under"><a href="#">EDIT CREWS</a></li>
+                    <li class="d-none Private--header--edit--under"><a href="#">EDIT TECHES</a></li>
+                    <li><a href="#">PROFILE</a></li>
+                    <li><a class="Private--header--language" href="#">English</a></li>
+                    <li><a class="Private--header--language" href="../fr/index.html">Français</a></li>
+                </ul>
+            </nav>
+        
+            <script>
+                const editParrent = document.querySelector("#Private--header--li--edit");
+                const edit = document.querySelector("#Private--header--li--edit a");
+                const editUnder = document.querySelectorAll(".Private--header--edit--under");
+        
+                edit.addEventListener("click", function() {
+                    editParrent.classList.toggle("Private--header--li--active");
+                    editUnder.forEach(function(element) {
+                        element.classList.toggle("d-none");
+                    });
+                });
+            </script>
+        
+        </header>
+
+        <main class="Private--main">
+        
+
+            <h1 class="Dashboard--title">Edit your profile</h1>
+    
+            <p class="Dashboard--description">
+                Here, you can edit your profile information and change your password.
+            </p>
+    
+            <div class="Edit_profile--logout">
+                <button type="submit" class="Edit_profile--logout--button" >Logout</button>
+            </div>
+    
+            <div class="Edit_profile--container">
+                
+                <form method="post" action="{{ route('profile.update') }}" class="Profile--profile_update">
+                    @csrf
+                    @method('patch')
+                
+                    
+                    <x-text-input class="Profile--profile_update--input" name="name" type="text" :value="old('name', $user->name)" required autofocus autocomplete="name" />
+                        
+                    <x-text-input class="Profile--profile_update--input" name="email" type="email" :value="old('email', $user->email)" required autocomplete="username" />
+                        
+                
+                    @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())       
+                        <p class="Profile--profile_update--p">
+                            {{ __('Your email address is unverified.') }}
+                
+                            <button form="send-verification" class="Profile--profile_update--p--button">
+                                {{ __('Click here to re-send the verification email.') }}
+                            </button>
+                        </p>
+                
+                        @if (session('status') === 'verification-link-sent')
+                            <p class="Profile--profile_update--p">
+                                {{ __('A new verification link has been sent to your email address.') }}
+                            </p>
+                        @endif
+                    @endif
+                    
+                
+                    <x-primary-button class="Profile--profile_update--confirm">{{ __('Save') }}</x-primary-button>
+                
+                    @if (session('status') === 'profile-updated')
+                        <p
+                            x-data="{ show: true }"
+                            x-show="show"
+                            x-transition
+                            x-init="setTimeout(() => show = false, 2000)"
+                            class="text-sm text-gray-600"
+                        >{{ __('Saved.') }}</p>
+                    @endif
+                
+                </form>                  
+                @include('profile.partials.update-password-form')
+            </div>
+        </main>
+    </body>
+</html>
