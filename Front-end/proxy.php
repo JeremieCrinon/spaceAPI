@@ -76,6 +76,11 @@ function callApiToVerifyToken($token) {
 
     // var_dump($data);
 
+    if(!$response){
+        echo "Erreur 500 : Problème serveur";
+        die;
+    }
+
     if($response->message === "L'utilisateur est autorisé") {
         // echo "true";
         // echo $response->message;

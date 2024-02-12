@@ -17,13 +17,17 @@ login_form.addEventListener('submit', (e) => {
         method: 'POST',
         body: formData
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Mot de passe incorecte'); // ou un autre message d'erreur personnalisé
+        }
+        return response.json()
+    })
     .then(data => {
         console.log(data);
-        // localStorage.setItem('token', data.token);
-        // console.log(localStorage.getItem('token'));
+        
         document.cookie = `token=${data.token}; max-age=7200; path=/`;
-        window.location.href = 'http://localhost/protected/index.html';
+        window.location.href = 'http://localhost/protected/en/index.html';
     })
     .catch(error => {
         console.error(error); // Gérer les erreurs éventuelles

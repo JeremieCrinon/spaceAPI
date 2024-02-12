@@ -8,6 +8,8 @@
 
         <link rel="stylesheet" href="../../css/style.css">
         <link rel="stylesheet" href="../css/style.css">
+
+        <script src="../js/en/planet.js" defer></script>
     </head>
     <body class="Private--body">
         <header class="Private--header">
@@ -15,12 +17,12 @@
             <nav class="Private--header--nav">
                 <ul>
                     <li><a href="../../en/index.html">PUBLIC PART</a></li>
-                    <li class="Private--header--li--current"><a href="#">HOME</a></li>
-                    <li id="Private--header--li--edit"><a href="#">EDIT CONTENT</a></li>
-                    <li class="d-none Private--header--edit--under"><a href="planet.html">EDIT PLANETS</a></li>
+                    <li><a href="index.html">HOME</a></li>
+                    <li id="Private--header--li--edit"  class="Private--header--li--current"><a href="#">EDIT CONTENT</a></li>
+                    <li class="d-none Private--header--edit--under"><a href="#">EDIT PLANETS</a></li>
                     <li class="d-none Private--header--edit--under"><a href="#">EDIT CREWS</a></li>
                     <li class="d-none Private--header--edit--under"><a href="#">EDIT TECHES</a></li>
-                    <li><a href="profile.html">PROFILE</a></li>
+                    <li><a href="#">PROFILE</a></li>
                 </ul>
             </nav>
         
@@ -40,11 +42,17 @@
         </header>
 
         <main class="Private--main">
-            <h1 class="Dashboard--title">Hi, administrator!</h1>
-            
+        
+
+            <h1 class="Dashboard--title">Edit your profile</h1>
+    
             <p class="Dashboard--description">
-                Welcome to your dashboard! Here, you can edit part of the content of the website! Hope you'll find everything you want easily. Good day, administrator!
+                Here, you can edit your profile information and change your password.
             </p>
+
+            <p id="Edit_profile_message" class="Edit_porfile--message"></p>
+            <p id="Edit_profile_error" class="Edit_porfile--error"></p>
+    
         </main>
     </body>
 </html>

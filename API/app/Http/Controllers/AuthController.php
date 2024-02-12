@@ -65,4 +65,66 @@ class AuthController extends Controller
         }
         return response()->json(['message' => "L'utilisateur est autorisé"], 200);
     }
+
+    public function giveUserInfo(){
+        $user = User::where('remember_token', request()->header('Authorization'))->first();
+        return response()->json(['name' => $user->name, 'email' => $user->email], 200);
+    }
+
+    public function changeUserName(Request $request){
+        $user = User::where('remember_token', request()->header('Authorization'))->first();
+
+        if(!$user){
+            return response()->json(['L\'utilisateur n\'existe pas!'], 404);
+        }
+
+        $user->name = $request->name;
+
+        $user->save();
+
+        return response()->json(['message' => "Le nom a bien été modifié !"], 200);
+    }
+
+    public function changeUserMail(Request $request){
+        $user = User::where('remember_token', request()->header('Authorization'))->first();
+
+        if(!$user){
+            return response()->json(['L\'utilisateur n\'existe pas!'], 404);
+        }
+
+        $user->email = $request->email;
+
+        $user->save();
+
+        return response()->json(['message' => "L'email à bien été modifié !"], 200);
+    }
+
+    public function changeUserPasswd(Request $request){
+        $data = $request->validate([
+            'password' => 'required',
+            'new_passwd' => 'required',
+            'confirm_passwd' => 'required',
+        ]);
+
+        $user = User::where('remember_token', request()->header('Authorization'))->first();
+
+        if(!$user){
+            return response()->json(['L\'utilisateur n\'existe pas!'], 404);
+        }
+        
+        if(!$user || !Hash::check($request->password, $user->password)){
+            return response()->json(['message' => "Le mot de passe est incorrect !"], 401); //On précise que le mot de passe est incorecte, car la personne qui se trouve ici à l'email de l'utilisateur affiché sur cette page
+        }
+
+        if ($request->new_passwd !== $request->confirm_passwd){
+            return response()->json(['message' => "Le nouveau mot de passe et la confirmation du nouveau mot de passe ne correspondent pas!"]);
+        }
+
+        $user->password = bcrypt($request->new_passwd);
+
+        $user -> save();
+
+        return response()->json(['message' => "Le mot de passe à bien été changé !"]);
+        
+    }
 }
