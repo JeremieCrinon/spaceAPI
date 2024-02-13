@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace</title>
+    <title>Space</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/script.js"></script>
+    <script src="../js/fr/crew.js" defer></script>
 </head>
 <body class="Crew--body">
     <header class="Website--header">
@@ -40,35 +41,35 @@
         <script src="../js/header.js"></script>
     </header>
 
-    <h1 class="Destination--title"><span>02</span>RENCONTREZ L'ÉQUIPAGE</h1><!-- Je remets la même class que pour destination, car le titre est le même -->
+    <h1 class="Destination--title"><span>02</span>DECOUVREZ L'EQUIPAGE</h1><!-- Je remets la même class que pour destination, car le titre est le même -->
     <section class="Crew--image__mobile Crew--image">
         
-        <img src="../img/commander.png" alt="Mark Shuttleworth">
+        <img class="crew_image" src="../img/commander.png" alt="Mark Shuttleworth">
         
     </section>
     <div class="Crew--bar__mobile"></div>
     <nav class="Crew--text--nav__mobile Crew--text--nav">
-        <ul>
-            <li><a class="Crew--text--nav--link__mobile Crew--text--nav--link" href="{{ url('/crew/commander') }}"></a></li>
+        <ul id="crew_menu1">
+            <!-- <li><a class="Crew--text--nav--link__mobile Crew--text--nav--link" href="{{ url('/crew/commander') }}"></a></li>
             <li><a class="Crew--text--nav--link__mobile Crew--text--nav--link--current__mobile Crew--text--nav--link Crew--text--nav--link--current" href="{{ url('/crew/mission_specialist') }}"></a></li>
             <li><a class="Crew--text--nav--link__mobile Crew--text--nav--link" href="{{ url('/crew/pilot') }}"></a></li>
-            <li><a class="Crew--text--nav--link__mobile Crew--text--nav--link" href="{{ url('/crew/engineer') }}"></a></li>
+            <li><a class="Crew--text--nav--link__mobile Crew--text--nav--link" href="{{ url('/crew/engineer') }}"></a></li> -->
         </ul>
     </nav>
 
 
-    <div class="Crew--container">
+    <div id="crew_content" class="Crew--container">
         <section class="Crew--text">
             
-            <p class="Crew--text--role">COMMANDANT</p>
-            <p class="Crew--text--name">DOUGLAS HURLEY</p>
-            <p class="Crew--text--description">Douglas Gerald Hurley est un ingénieur américain, un ancien pilote du Coprs des Marines et un ancien astronaute de la NASA. Il s'est lancé dans l'espace pour la troisième fois en tant que commandant du vaissaux Crew Dragon Demo-2.</p>
+            <p class="Crew--text--role"></p>
+            <p class="Crew--text--name"></p>
+            <p class="Crew--text--description"></p>
             <nav class="Crew--text--nav">
-                <ul>
-                    <li><a class="Crew--text--nav--link Crew--text--nav--link--current" href="{{ url('/crew/commander') }}"></a></li>
+                <ul id="crew_menu2">
+                    <!-- <li><a class="Crew--text--nav--link Crew--text--nav--link--current" href="{{ url('/crew/commander') }}"></a></li>
                     <li><a class="Crew--text--nav--link" href="{{ url('/crew/mission_specialist') }}"></a></li>
                     <li><a class="Crew--text--nav--link" href="{{ url('/crew/pilot') }}"></a></li>
-                    <li><a class="Crew--text--nav--link" href="{{ url('/crew/engineer') }}"></a></li>
+                    <li><a class="Crew--text--nav--link" href="{{ url('/crew/engineer') }}"></a></li> -->
                 </ul>
             </nav>
            
@@ -76,7 +77,7 @@
 
         <section class="Crew--image">
            
-            <img src="../img/commander.png" alt="Douglas Hurley">
+            <img class="crew_image" src="../img/commander.png" alt="Douglas Hurley">
         
         </section>
     </div>

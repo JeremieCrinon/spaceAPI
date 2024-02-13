@@ -1244,3 +1244,11 @@ html{
 /* Responsive */
 
 /* Technologie */
+
+.Login--body, .Register--body{
+    background-color: #000;
+}
+
+.Login--title, .Register--title{
+    color: #FFF;
+}

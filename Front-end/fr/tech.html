@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace</title>
+    <title>Space</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/script.js"></script>
+    <script src="../js/fr/tech.js" defer></script>
 </head>
 <body class="Tech--body">
     <header class="Website--header">
@@ -40,27 +41,30 @@
         <script src="../js/header.js"></script>
     </header>
 
-    <h1 class="Destination--title"><span>03</span>LANCEUR SPATIAL 101</h1><!-- Je remets la même class que pour destination, car le titre est le même -->
-    <section class="Tech--text">
+    <section id="tech_content">
+        <h1 class="Destination--title"><span>03</span>LANCEUR SPATIAL 101</h1><!-- Je remets la même class que pour destination, car le titre est le même -->
+        <section class="Tech--text">
+            
+            <nav class="Tech--text--nav">
+                <ul id="tech_menu">
+                    <!-- <li><a class="Tech--text--nav--link Tech--text--nav--link--current" href="{{ url('/tech/launcher') }}">1</a></li>
+                    <li><a class="Tech--text--nav--link" href="{{ url('/tech/spaceport') }}">2</a></li>
+                    <li><a class="Tech--text--nav--link" href="{{ url('/tech/space_capsule') }}">3</a></li> -->
+                </ul>
+            </nav>
+            <div class="Tech--text--infos">
+                <h2 class="Tech--text--title">LA TERMINOLOGIE...</h2>
+                <h3 id="tech_name" class="Tech--text--subtitle"></h3>
+                <p id="tech_description" class="Tech--text--description"></p>
+            </div>
+            
+        </section>
+        <section class="Tech--img">
         
-        <nav class="Tech--text--nav">
-            <ul>
-                <li><a class="Tech--text--nav--link Tech--text--nav--link--current" href="{{ url('/tech/launcher') }}">1</a></li>
-                <li><a class="Tech--text--nav--link" href="{{ url('/tech/spaceport') }}">2</a></li>
-                <li><a class="Tech--text--nav--link" href="{{ url('/tech/space_capsule') }}">3</a></li>
-            </ul>
-        </nav>
-        <div class="Tech--text--infos">
-            <h2 class="Tech--text--title">LA TERMINOLOGIE...</h2>
-            <h3 class="Tech--text--subtitle">LE LANCEUR</h3>
-            <p class="Tech--text--description">Un lanceur ou une fusée porteuse est un véhicule propulsé par fusée utilisé pour transporter une charge utile de la surface de la Terre vers l’espace, habituellement vers l’orbite terrestre ou au-delà. Notre fusée WEB-X est la plus puissante en service. Debout à 150 mètre de hauteur, elle donne lieu à un impressionnant spectacle sur le pas de tir.</p>
-        </div>
-        
-    </section>
-    <section class="Tech--img">
-       
-        <img class="Tech--img--image" src="../img/launcher.png" alt="Launcher">
+            <img id="Tech_img" class="Tech--img--image" src="../img/launcher.png" alt="Launcher">
 
+        </section>
     </section>
+    
 </body>
 </html>
