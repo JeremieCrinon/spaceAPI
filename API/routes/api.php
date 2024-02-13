@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlanetController;
+use App\Http\Controllers\CrewController;
 use App\Http\Controllers\AuthController;
 use App\Http\Middleware\VerifyToken;
 
@@ -32,6 +33,11 @@ Route::middleware(['verifytoken'])->group(function () {
     Route::post('/planet', [PlanetController::class, 'store']);
     Route::get('/admin/planet/{id}/destroy', [PlanetController::class, 'destroy']);
     Route::post('/admin/planet/{id}/edit', [PlanetController::class, 'update']);
+
+    Route::get('/admin/crews', [CrewController::class, 'index']);
+    Route::post('/crew', [CrewController::class, 'store']);
+    Route::get('/admin/crew/{id}/destroy', [CrewController::class, 'destroy']);
+    Route::post('/admin/crew/{id}/edit', [CrewController::class, 'update']);
 });
 
 // Route::post('/planet', [PlanetController::class, 'store'])->middleware('verifytoken');
@@ -40,6 +46,11 @@ Route::get('/planet/{id}', [PlanetController::class, 'show']);
 Route::get('/planets', [PlanetController::class, 'indexForMenu']);
 
 Route::get('/planetImg/{imgName}', [PlanetController::class, 'getImg']);
+
+Route::get('/crew/{id}', [CrewController::class, 'show']);
+Route::get('/crews', [CrewController::class, 'indexForMenu']);
+
+Route::get('/crewImg/{imgName}', [CrewController::class, 'getImg']);
 
 
 Route::post('/register', [AuthController::class, 'register']);
