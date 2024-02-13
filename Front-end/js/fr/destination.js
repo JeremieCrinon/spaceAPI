@@ -7,7 +7,7 @@ const Destination_img = document.getElementById('Destination_img');
 const Destination_content = document.getElementById('Destination_content');
 
 function HandleApiError(){
-    Destination_content.innerHTML = '<h2 class="Destination--error">Error 500 : Internal server error, please try again later!</h2>';
+    Destination_content.innerHTML = '<h2 class="Destination--error">Erreur 500 : Erreur serveur, veuillez réessayer plus tard!</h2>';
 }
 
 function LoadPlanet(id){
@@ -15,8 +15,8 @@ function LoadPlanet(id){
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        Destination_text_title.textContent = data.en_name;
-        Destination_text_subtitle.textContent = data.en_description;
+        Destination_text_title.textContent = data.fr_name;
+        Destination_text_subtitle.textContent = data.fr_description;
         Destination_text_distance.textContent = data.distance;
         Destination_text_time.textContent = data.time;
         imagePath = data.image;

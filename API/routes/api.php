@@ -22,12 +22,16 @@ use App\Http\Middleware\VerifyToken;
 // Route::post('/planet', [PlanetController::class, 'store']);``
 
 Route::middleware(['verifytoken'])->group(function () {
-    Route::post('/planet', [PlanetController::class, 'store']);
 
     Route::get('/user', [AuthController::class, 'giveUserInfo']);
     Route::post('/user/edit/name', [AuthController::class, 'changeUserName']);
     Route::post('/user/edit/mail', [AuthController::class, 'changeUserMail']);
     Route::post('/user/edit/password', [AuthController::class, 'changeUserPasswd']);
+
+    Route::get('/admin/planets', [PlanetController::class, 'index']);
+    Route::post('/planet', [PlanetController::class, 'store']);
+    Route::get('/admin/planet/{id}/destroy', [PlanetController::class, 'destroy']);
+    Route::post('/admin/planet/{id}/edit', [PlanetController::class, 'update']);
 });
 
 // Route::post('/planet', [PlanetController::class, 'store'])->middleware('verifytoken');

@@ -20,6 +20,15 @@ class PlanetController extends Controller
     }
 
     /**
+     * Display all the planets.
+     */
+    public function index()
+    {
+        $planets = Planet::all();
+        return response()->json($planets);
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -99,16 +108,71 @@ class PlanetController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Planet $planet)
+    public function update(Request $request, string $id)
     {
-        //
+        // Validation des données
+        $validatedData = $request->validate([
+            'fr_name' => 'required|max:20',
+            'en_name' => 'required|max:20',
+            'fr_description' => 'required|max:500',
+            'en_description' => 'required|max:500',
+            'distance' => 'required|max:20',
+            'time' => 'required|max:20',
+            'image' => 'nullable|image',
+        ]);
+
+        // Trouver la planète par son ID
+        $planet = Planet::findOrFail($id);
+
+        // Mise à jour des données
+        $planet->fr_name = $validatedData['fr_name'];
+        $planet->en_name = $validatedData['en_name'];
+        $planet->fr_description = $validatedData['fr_description'];
+        $planet->en_description = $validatedData['en_description'];
+        $planet->distance = $validatedData['distance'];
+        $planet->time = $validatedData['time'];
+
+        // Gestion de l'upload de l'image
+        if ($request->hasFile('image')) {
+            // On fais le lien qui mène vers l'enciène image
+            $imagePath = public_path("../storage/app/public/" . $planet->image);
+
+            // Supprime l'image si elle existe
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+
+            $planet->image = $request->file('image')->store('img', 'public');
+            $planet->image = $request->image->store('img', 'public');
+        }
+
+        // Sauvegarder les modifications
+        $planet->save();
+
+        // Rediriger avec un message
+        return response()->json(['message' => "La planète a bien été modifiée !"]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Planet $planet)
+    public function destroy(string $id)
     {
-        //
+
+
+        $planet = Planet::findOrFail($id); // Trouve la planète ou renvoie une erreur 404 si elle n'existe pas
+        // Construit le chemin complet de l'image
+        $imagePath = public_path("../storage/app/public/" . $planet->image);
+
+        // Supprime l'image si elle existe
+        if (file_exists($imagePath)) {
+            $result = "La planete à correctement été supprimée !";
+            unlink($imagePath);
+        } else {
+            $result = "L'image n'existe pas, elle se trouve normalement à l'emplacement " . $imagePath;
+        }
+        $planet->delete(); // Supprime la planète de la base de données
+
+        return response()->json(['message' => $result]);
     }
 }

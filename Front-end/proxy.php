@@ -47,6 +47,7 @@ if ($isTokenValid) {
     }
 } else {
     header("HTTP/1.1 401 Unauthorized");
+    echo "<a href='http://localhost/en/login.html'>Se connecter</a><br>";
     exit('Unauthorized');
 }
 
