@@ -6,6 +6,7 @@
     <title>Space</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/script.js"></script>
+    <script src="../js/en/tech.js" defer></script>
 </head>
 <body class="Tech--body">
     <header class="Website--header">
@@ -40,27 +41,30 @@
         <script src="../js/header.js"></script>
     </header>
 
-    <h1 class="Destination--title"><span>03</span>SPACE LAUNCHER 101</h1><!-- Je remets la même class que pour destination, car le titre est le même -->
-    <section class="Tech--text">
+    <section id="tech_content">
+        <h1 class="Destination--title"><span>03</span>SPACE LAUNCHER 101</h1><!-- Je remets la même class que pour destination, car le titre est le même -->
+        <section class="Tech--text">
+            
+            <nav class="Tech--text--nav">
+                <ul id="tech_menu">
+                    <!-- <li><a class="Tech--text--nav--link Tech--text--nav--link--current" href="{{ url('/tech/launcher') }}">1</a></li>
+                    <li><a class="Tech--text--nav--link" href="{{ url('/tech/spaceport') }}">2</a></li>
+                    <li><a class="Tech--text--nav--link" href="{{ url('/tech/space_capsule') }}">3</a></li> -->
+                </ul>
+            </nav>
+            <div class="Tech--text--infos">
+                <h2 class="Tech--text--title">THE TERMINOLOGY...</h2>
+                <h3 id="tech_name" class="Tech--text--subtitle"></h3>
+                <p id="tech_description" class="Tech--text--description"></p>
+            </div>
+            
+        </section>
+        <section class="Tech--img">
         
-        <nav class="Tech--text--nav">
-            <ul>
-                <li><a class="Tech--text--nav--link Tech--text--nav--link--current" href="{{ url('/tech/launcher') }}">1</a></li>
-                <li><a class="Tech--text--nav--link" href="{{ url('/tech/spaceport') }}">2</a></li>
-                <li><a class="Tech--text--nav--link" href="{{ url('/tech/space_capsule') }}">3</a></li>
-            </ul>
-        </nav>
-        <div class="Tech--text--infos">
-            <h2 class="Tech--text--title">THE TERMINOLOGY...</h2>
-            <h3 class="Tech--text--subtitle">THE LAUNCHER</h3>
-            <p class="Tech--text--description">A launcher or carrying rocket is a vehicle powered by rockets used to carry payload from Earth surface to space, often to an Earth orbite or further. Ours rocket WEB-X is the most powerfull in service. Standit at a whoping 150 meters high, it give an impressive spectacle on the launching site.</p>
-        </div>
-        
-    </section>
-    <section class="Tech--img">
-       
-        <img class="Tech--img--image" src="../img/launcher.png" alt="Launcher">
+            <img id="Tech_img" class="Tech--img--image" src="../img/launcher.png" alt="Launcher">
 
+        </section>
     </section>
+    
 </body>
 </html>

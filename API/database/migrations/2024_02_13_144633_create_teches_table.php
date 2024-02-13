@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('teches', function (Blueprint $table) {
             $table->id();
+            $table->string('fr_name');
+            $table->string('en_name');
+            $table->text('fr_description');
+            $table->text('en_description');
+            $table->string('image');
             $table->timestamps();
         });
     }

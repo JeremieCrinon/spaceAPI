@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlanetController;
 use App\Http\Controllers\CrewController;
+use App\Http\Controllers\TechController;
 use App\Http\Controllers\AuthController;
 use App\Http\Middleware\VerifyToken;
 
@@ -38,6 +39,11 @@ Route::middleware(['verifytoken'])->group(function () {
     Route::post('/crew', [CrewController::class, 'store']);
     Route::get('/admin/crew/{id}/destroy', [CrewController::class, 'destroy']);
     Route::post('/admin/crew/{id}/edit', [CrewController::class, 'update']);
+
+    Route::get('/admin/teches', [TechController::class, 'index']);
+    Route::post('/tech', [TechController::class, 'store']);
+    Route::get('/admin/tech/{id}/destroy', [TechController::class, 'destroy']);
+    Route::post('/admin/tech/{id}/edit', [TechController::class, 'update']);
 });
 
 // Route::post('/planet', [PlanetController::class, 'store'])->middleware('verifytoken');
@@ -51,6 +57,11 @@ Route::get('/crew/{id}', [CrewController::class, 'show']);
 Route::get('/crews', [CrewController::class, 'indexForMenu']);
 
 Route::get('/crewImg/{imgName}', [CrewController::class, 'getImg']);
+
+Route::get('/tech/{id}', [TechController::class, 'show']);
+Route::get('/teches', [TechController::class, 'indexForMenu']);
+
+Route::get('/techImg/{imgName}', [TechController::class, 'getImg']);
 
 
 Route::post('/register', [AuthController::class, 'register']);

@@ -1117,6 +1117,10 @@ html{
     width: 35.7%;
 }
 
+.Tech--text--subtitle{
+    text-transform: uppercase;
+}
+
 /* Responsive */
 
 /* Tablet */
