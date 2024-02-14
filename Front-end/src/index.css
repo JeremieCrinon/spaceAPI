@@ -1252,3 +1252,7 @@ html{
 .Login--title, .Register--title{
     color: #FFF;
 }
+
+#login_form_message{
+    color: #FFF;
+}

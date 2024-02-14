@@ -6,6 +6,7 @@ const tech_description = document.getElementById('tech_description');
 let countTech = 1;
 
 function HandleApiError(){
+    console.log('Error 500 : Internal server error, please try again later!');
     tech_content.innerHTML = '<h2 class="Destination--error">Error 500 : Internal server error, please try again later!</h2>';
 }
 
@@ -46,3 +47,4 @@ fetch('http://localhost:8000/api/teches')
     const firstLink = document.querySelector('.Tech--text--nav--link');
     firstLink.classList.add('Tech--text--nav--link--current');
 })
+.catch(HandleApiError);

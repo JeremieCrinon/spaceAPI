@@ -46,3 +46,4 @@ fetch('http://localhost:8000/api/teches')
     const firstLink = document.querySelector('.Tech--text--nav--link');
     firstLink.classList.add('Tech--text--nav--link--current');
 })
+.catch(HandleApiError);
